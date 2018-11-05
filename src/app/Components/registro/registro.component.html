@@ -1,0 +1,38 @@
+<div class="Login">
+  <div class="row" style="margin-top: 3% ">
+    <div class="col s12 m2 "></div>
+    <div  class="col s12 m8">
+      <div class="row">
+        <h3 class="grey-text text-darken-2">Crea tu cuenta</h3>
+      </div>
+      <form>
+        <div class="row">
+          <div class="input-field col s12">
+            <input name="usuario"  id="first_name" type="text" [(ngModel)]="user.nombre" required class="validate">
+            <label for="first_name">Ingrese su Nombre y Apellido</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <input name="password"  id="password" [(ngModel)]="user.contrasena" type="password" required class="validate">
+            <label for="password">Ingrese su Contraseña</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <input name="passwordR" id="passwordR" type="password" [(ngModel)]="contrasena2" required class="validate">
+            <label for="password">Repita su Contraseña</label>
+          </div>
+          <div class="input-field col s12">
+            <input name="email" id="email" type="email" [(ngModel)]="user.correo" required class="validate">
+            <label for="email">Ingrese su Email</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 m10">
+              <span style="color: red">{{errorMess}}</span>
+          </div>
+          <div class="input-field col s12 m2">
+            <button class="btn waves-effect waves-light" (click)="crear();">Crear</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

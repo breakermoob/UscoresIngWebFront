@@ -1,0 +1,153 @@
+<nav id="id03">
+  <div class="row">
+    <div class="nav-wrapper">
+      <a [routerLink]="['/inicio']">
+        <img src="assets/img/UScores-04.png" width="15%" height="auto" style="position:absolute; left:10px; top:4px">
+      </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li class="active" routerLinkActive="active">
+          <a onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
+        </li>
+        <li class="active" routerLinkActive="active">
+          <a [routerLink]="['']">Inicio</a>
+
+        </li>
+        <li class="active" routerLinkActive="active">
+          <a [routerLink]="['/Crear']">Crear</a>
+        </li>
+        <li class="active" routerLinkActive="active">
+          <a [routerLink]="['/Visualizar']">Visualizar</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<nav id="id02" style="display: none">
+  <div class="row">
+    <div class="nav-wrapper">
+      <a [routerLink]="['/inicio']">
+        <img src="assets/img/UScores-04.png" width="15%" height="auto" style="position:absolute; left:10px; top:4px">
+      </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li class="active" routerLinkActive="active">
+          <a [routerLink]="['/Perfil']">Perfil</a>
+        </li>
+        <li class="active" routerLinkActive="active">
+          <a [routerLink]="['']">Inicio</a>
+        </li>
+        <li class="active" routerLinkActive="active">
+          <a [routerLink]="['/Crear']">Crear</a>
+        </li>
+        <li class="active" routerLinkActive="active">
+          <a [routerLink]="['/Visualizar']">Visualizar</a>
+        </li>
+        <li class="active" routerLinkActive="active">
+            <a (click)="onLoginOut();">Salir</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <!-- Grey navigation panel -->
+    </div>
+    <div class="col s12">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="col s12">
+      <div id="id01" class="modal" >
+        <form class="modal-content animate" action="/action_page.php">
+          <div class="imgcontainer">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+          </div>
+
+          <div class="container">
+            <div class="row">
+              <div class="col s12">
+                <label for="uname">
+                  <b>Usuario</b>
+                </label>
+                <input type="text" placeholder="Ingrese el usuario" name="uname" [(ngModel)]="user.correo" required>
+                <label for="psw">
+                  <b>Contraseña</b>
+                </label>
+                <input type="password" placeholder="Ingrese la contraseña" name="psw"  [(ngModel)]="user.contrasena" required>
+              </div>
+
+              <div class="input-field col s12 m9">
+                  <span style="color: red">{{errorMess}}</span>
+              </div>
+              <div class="input-field col s12 m3">
+                <a class="waves-effect waves-light btn"  (click)="onLogin();">Entrar</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="container" style="background-color:#f1f1f1">
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancelar</button>
+            <span class="psw">
+              <a onclick="document.getElementById('id01').style.display='none'" [routerLink]="['/Registro']">Registrarse</a>
+            </span>
+          </div>
+        </form>
+      </div>
+
+      <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+      </script>
+
+    </div>
+    <div class="col s12">
+
+    </div>
+  </div>
+</div>
+
+
+
+<footer class="page-footer light-green darken-2">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Ingeniería Web</h5>
+        <p class="grey-text text-lighten-4" style="text-align: justify">
+          UScores es una aplicación web la cual sirve para crear y organizar un calendario deportivo (torneos, eventos especiales,
+          etc.) como también un historial de los eventos deportivos que se realicen dentro del campus universitario, además
+          de ser muy útil para la comunidad universitaria, ya que se podrá acceder a la información de los diferentes torneos
+          y demás eventos deportivos.
+        </p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Estudiantes</h5>
+        <ul>
+          <li>
+            <a class="grey-text text-lighten-3" href="">Leon Dario Arango</a>
+          </li>
+          <li>
+            <a class="grey-text text-lighten-3" href="">Vanessa Serna</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      © 2018 Copyright
+      <a class="grey-text text-lighten-4 right" href="">Mas</a>
+    </div>
+  </div>
+</footer>
+

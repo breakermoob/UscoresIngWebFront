@@ -1,0 +1,15 @@
+.pequeña{
+    width: 20px; height: auto;
+    }
+
+    /*Bloquear los elementos del div*/
+    #contenedor{
+        color: #333;
+        display: inline-block;
+     }
+     
+     /*poner todos los elementos en la misma linea*/
+     #contenedor div{
+        
+        float: left;
+     }
